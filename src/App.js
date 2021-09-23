@@ -1,5 +1,5 @@
 import './App.css';
-import React ,{Component,useState, useEffect} from 'react';
+import React ,{Component} from 'react';
 import SearchBox from './components/SearchBox';
 import Navbar from "./components/Navbar";
 //import {Users}  from './Users';
@@ -27,9 +27,7 @@ getUser =()=>{
   Axios.get("http://localhost:3001/read")
   .then((res)=>{
     const data = res.data;
-    console.log(data);
     this.setState({users:data});
-    console.log('good data');
   }).catch(()=>
   alert('Eror retriver data'));
 }

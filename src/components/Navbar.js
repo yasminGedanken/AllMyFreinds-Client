@@ -1,7 +1,7 @@
 
-import React, { useState} from 'react';
+import React from 'react';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
-import AddAndRemove from "./AddAndRemove";
+import AddUser from "./AddUser";
 
 
 function Navbar (){
@@ -12,16 +12,16 @@ function Navbar (){
           <Router>
             <div>
               <ul>
+                
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/AddUser">Add User</Link>
                 </li>
                 <li>
-                  <Link to="/AddAndRemove">Add & Remove</Link>
+                  <Link to="/">close</Link>
                 </li>
-               
               </ul>
               <Route path="/" />
-              <Route path="/AddAndRemove" component={AddAndRemove} />
+              <Route path="/AddUser" component={AddUser} />
               
             </div>
           </Router>
