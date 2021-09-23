@@ -1,12 +1,12 @@
 import './App.css';
-import React ,{Component} from 'react';
+import React ,{Component,useState, useEffect} from 'react';
 import SearchBox from './components/SearchBox';
 import Navbar from "./components/Navbar";
-import {Users}  from './Users';
+//import {Users}  from './Users';
 import Scroll from './components/Scroll';
 import UsersList from './components/UsersList';
+import Axios from 'axios';
 
- 
 
 
 class App extends Component{
@@ -14,16 +14,28 @@ class App extends Component{
   constructor(){
     super()
     this.state={
-      users: Users,
+      users: [],
       searchfield:""
     }
   }
 
   componentDidMount(){
-    fetch('SampleData')
-    .then(response=> response.json())
-    .then(users=> this.setState({users:users}));
+    this.getUser();
   }
+
+getUser =()=>{
+  Axios.get("http://localhost:3001/read")
+  .then((res)=>{
+    const data = res.data;
+    console.log(data);
+    this.setState({users:data});
+    console.log('good data');
+  }).catch(()=>
+  alert('Eror retriver data'));
+}
+
+
+ 
 
   onSearchChenge = (event) =>{
     this.setState({searchfield: event.target.value})

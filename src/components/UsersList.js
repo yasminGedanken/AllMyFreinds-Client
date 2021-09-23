@@ -4,7 +4,9 @@ import Card from './Card';
 
 const UsersList = ({users})=>
 {
+  console.log(users)
 return(
+  
     <div>{
      users.map((user, i) => {
    return(
