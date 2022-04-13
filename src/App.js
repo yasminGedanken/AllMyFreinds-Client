@@ -52,7 +52,7 @@ render(){
   return(
   
   <div className="tc">
-    <h1 className='f1 '>HUMANZ</h1>
+    <h1 className='f1 '>All My Friends</h1>
     <Navbar/>
     <SearchBox searchChenge={this.onSearchChenge}/>
     <Scroll>
